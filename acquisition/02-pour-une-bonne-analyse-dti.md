@@ -1,4 +1,9 @@
-# Pour une bonne analyse DTI
+---
+layout: default
+title: Pour une bonne analyse DTI
+---
+
+## Pour une bonne analyse DTI
 
 Le premier type d'analyse auquel on peut penser est le DTI et le
 métriques associées telles que FA, MD (=ADC), RD etc...

@@ -1,4 +1,9 @@
-# Contrôle qualité données brutes
+---
+layout: default
+title: Contrôle qualité données brutes
+---
+
+## Contrôle qualité données brutes
 
 Points à vérifier (avant tout pré-traitement) :
 

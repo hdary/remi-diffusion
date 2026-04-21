@@ -1,4 +1,9 @@
-# Pour une bonne tractographie
+---
+layout: default
+title: Pour une bonne tractographie
+---
+
+## Pour une bonne tractographie
 
 Dans ce cas, un nombre plus important de directions est requis et
 l'acquisition de plusieurs valeurs de b semble recommandé. (les

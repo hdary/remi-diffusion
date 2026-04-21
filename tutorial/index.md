@@ -1,10 +1,11 @@
-# Tutorial
+---
+layout: default
+title: Tutorial
+---
 
-![Logo du site REMI](../assets/images/site/logo_remi.png)
+## Tutorial
 
 Ce point d'entrée est destiné aux utilisateurs du site. Il servira à regrouper les notebooks et les guides d'exécution pour lancer des analyses d'IRM de diffusion.
-
-Navigation rapide: [Home](../index.md) | [Acquisition](../acquisition/01-description.md) | [Analyses](../analyses/01-preparation-bids.md) | [Tutorial](./index.md)
 
 ## À venir
 

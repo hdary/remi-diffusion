@@ -1,4 +1,9 @@
-# Préparation des données - BIDS pour la diffusion
+---
+layout: default
+title: Préparation des données - BIDS pour la diffusion
+---
+
+## Préparation des données - BIDS pour la diffusion
 
 bvec / bval
 

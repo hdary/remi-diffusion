@@ -1,4 +1,9 @@
-# Prétraitements
+---
+layout: default
+title: Prétraitements
+---
+
+## Prétraitements
 
 ## Outils disponibles
 

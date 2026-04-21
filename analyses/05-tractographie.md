@@ -1,4 +1,9 @@
-# Tractographie
+---
+layout: default
+title: Tractographie
+---
+
+## Tractographie
 
 ### Mini bibliographie
 

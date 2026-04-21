@@ -1,0 +1,18 @@
+- label: Home
+  url: /index.html
+  path: index.md
+  match: index.md
+- label: Acquisition
+  url: /acquisition/01-description.html
+  path: acquisition/01-description.md
+  match: acquisition/
+- label: Analyses
+  url: /analyses/01-preparation-bids.html
+  path: analyses/01-preparation-bids.md
+  match: analyses/
+- label: Tutorial
+  url: /tutorial/index.html
+  path: tutorial/index.md
+  match: tutorial/
+- label: View on GitHub
+  url: https://github.com/hdary/remi-diffusion

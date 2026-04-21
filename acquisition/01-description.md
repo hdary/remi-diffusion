@@ -1,8 +1,13 @@
-# Bonnes pratiques pour l'IRM de diffusion en neuro
+---
+layout: default
+title: Description
+---
+
+## Bonnes pratiques pour l'IRM de diffusion en neuro
 
 ## Groupe d'actions du REMI
 
-# Description
+## Description
 
 ## Responsables
 
@@ -51,7 +56,7 @@ en œuvre :
 Éventuellement lister également les questions souvent abordées en
 Neurosciences.
 
-# Protocole(s) de Diffusion idéal (aux)?
+## Protocole(s) de Diffusion idéal (aux)?
 
 L'idée est ici de réfléchir à un protocole "standard" (à 3T pour le
 moment mais des discussions pour les autres champs peuvent être

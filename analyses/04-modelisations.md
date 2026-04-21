@@ -1,4 +1,9 @@
-# Modélisations
+---
+layout: default
+title: Modélisations
+---
+
+## Modélisations
 
 Les explications données dans cette parties sont partielles et la liste
 des outils disponibles n'est pas exhaustive.

@@ -1,6 +1,9 @@
-# But
+---
+layout: default
+title: IRM de Diffusion
+---
 
-![Logo du site REMI](./assets/images/site/logo_remi.png)
+## IRM de Diffusion
 
 Ce document propose une synthèse opérationnelle des bonnes pratiques en
 IRM de diffusion. Il ne vise pas à réexpliquer l'ensemble des concepts
@@ -10,8 +13,6 @@ exhaustive) couramment utilisés ainsi que quelques « tips » issus de la
 pratique.
 
 ## Table des matières
-
-Navigation rapide: [Home](./index.md) | [Acquisition](./acquisition/01-description.md) | [Analyses](./analyses/01-preparation-bids.md) | [Tutorial](./tutorial/index.md)
 
 ### Acquisition
 

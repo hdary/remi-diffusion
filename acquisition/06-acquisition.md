@@ -1,7 +1,12 @@
-# Acquisition
+---
+layout: default
+title: Acquisition
+---
+
+## Acquisition
 
 Proposition de protocole d'acquisition, basé sur
-https://github.com/neurolabusc/dcm_qa_toshiba.
+[dcm_qa_toshiba](https://github.com/neurolabusc/dcm_qa_toshiba).
 
 L'idée est d'obtenir un protocole assez facile à mettre en place et
 rapide pour déterminer comment les b-valeurs et les directions du
@@ -108,7 +113,7 @@ Dual-Echo Diffusion-Weighted MRI.** Journal of
 Neuroimaging 2020, 30 (3),
 276--285. [[https://doi.org/10.1111/jon.12708]{.underline}](https://doi.org/10.1111/jon.12708).
 
-# Traitement de données :
+## Traitement de données
 
 voir ici
-https://resana.numerique.gouv.fr/public/perimetre/consulter/532839?information=44532971
+[lien Resana](https://resana.numerique.gouv.fr/public/perimetre/consulter/532839?information=44532971)

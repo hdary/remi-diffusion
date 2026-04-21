@@ -1,4 +1,9 @@
-# Guide de contribution
+---
+layout: default
+title: Guide de contribution
+---
+
+## Guide de contribution
 
 Ce guide est destiné aux personnes qui modifient le site Markdown lui-même.
 
@@ -51,6 +56,28 @@ Bonnes pratiques:
 - Vérifie que le chemin est bien relatif à la page Markdown.
 - Garde l'image dans le dossier de sa section pour éviter un dossier unique surchargé.
 
+## Modifier les boutons du site
+
+Les boutons en haut du site sont définis une seule fois dans `_data/navigation.yml` et affichés par le layout global.
+
+Pour changer un bouton existant ou lui faire pointer vers une autre page:
+
+1. Ouvre `_data/navigation.yml`.
+2. Modifie le champ `label` pour changer le texte du bouton.
+3. Modifie le champ `url` pour pointer vers la page voulue, par exemple `/analyses/03-pretraitements.html`.
+4. Ajuste `match` si tu veux que le bouton reste surligné sur une autre section.
+
+Exemple:
+
+```yaml
+- label: Tutorial
+  url: /tutorial/index.html
+  path: tutorial/index.md
+  match: tutorial/
+```
+
+Si tu ajoutes une nouvelle page principale, ajoute aussi une entrée dans ce fichier pour qu'elle apparaisse comme bouton global.
+
 ## Ajouter un graphique
 
 Il y a deux cas fréquents.
@@ -65,6 +92,28 @@ flowchart TD
   B --> C[Prévisualisation]
   C --> D[Publication]
 ```
+
+## Ajouter un notebook ou un script dans `tutorial/notebooks`
+
+Le dossier `tutorial/notebooks/` est prévu pour les notebooks et les scripts liés aux analyses de diffusion.
+
+Pour ajouter un notebook:
+
+1. Crée un fichier `.ipynb` dans `tutorial/notebooks/`.
+2. Utilise un nom clair, par exemple `01-qc-dwi.ipynb` ou `02-preprocessing.ipynb`.
+3. Si le notebook dépend d'un contexte particulier, ajoute un petit fichier `README.md` dans le même sous-dossier pour expliquer l'objectif.
+
+Pour ajouter un script:
+
+1. Crée un fichier `.py` dans `tutorial/notebooks/` ou dans un sous-dossier dédié si le projet grossit.
+2. Donne-lui un nom numéroté et explicite, par exemple `01-run_qc.py`.
+3. Indique dans le `README.md` comment le lancer et quelles entrées il attend.
+
+Bonnes pratiques:
+
+- Garde les jeux de données volumineux hors du dépôt.
+- Écris en tête du notebook ou du script les dépendances nécessaires.
+- Si le fichier sert de support au site, ajoute un lien vers lui depuis `tutorial/index.md`.
 
 ## Prévisualiser en direct dans VS Code
 
@@ -106,7 +155,7 @@ Utilisation courante:
 4. Choisis un dossier local.
 5. Ouvre le projet une fois le clonage terminé.
 
-### Avec GitHub Desktop
+### Cloner avec GitHub Desktop
 
 1. Ouvre GitHub Desktop.
 2. Choisis `File > Clone repository`.
@@ -114,7 +163,7 @@ Utilisation courante:
 4. Choisis le dossier local de destination.
 5. Clique sur `Clone` puis ouvre le dépôt dans VS Code si besoin.
 
-### En ligne de commande
+### Cloner en ligne de commande
 
 ```bash
 git clone https://github.com/organisation/nom-du-depot.git
@@ -131,14 +180,14 @@ cd nom-du-depot
 4. Entre un message de commit.
 5. Clique sur `Commit` puis `Push` ou `Sync Changes`.
 
-### Avec GitHub Desktop
+### Pousser avec GitHub Desktop
 
 1. Sélectionne les fichiers modifiés.
 2. Renseigne un message de commit.
 3. Clique sur `Commit to main`.
 4. Clique sur `Push origin`.
 
-### En ligne de commande
+### Pousser en ligne de commande
 
 ```bash
 git status

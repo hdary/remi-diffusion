@@ -1,4 +1,9 @@
-# Pour du DKI (Diffusion Kurtosis Imaging)
+---
+layout: default
+title: Pour du DKI (Diffusion Kurtosis Imaging)
+---
+
+## Pour du DKI (Diffusion Kurtosis Imaging)
 
 Au moins deux valeur de b. A compléter...
 

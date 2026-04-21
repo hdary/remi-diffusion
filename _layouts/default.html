@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'fr' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Accueil du site">
+        <img class="site-brand__logo" src="{{ '/assets/images/site/logo_remi.png' | relative_url }}" alt="Logo du site REMI">
+        <span class="site-brand__copy">
+          <span class="site-brand__title">{{ site.title }}</span>
+          <span class="site-brand__subtitle">{{ site.description }}</span>
+        </span>
+      </a>
+      {% include site-nav.html %}
+    </div>
+  </header>
+
+  <main class="site-main">
+    <article class="content-panel">
+      {{ content }}
+    </article>
+  </main>
+</body>
+</html>

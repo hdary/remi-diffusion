@@ -1,4 +1,9 @@
-# Pour du NODDI
+---
+layout: default
+title: Pour du NODDI
+---
+
+## Pour du NODDI
 
 Une première piste: Protocole optimisé dans le papier original de NODDI
 (Zhang et al. 2012) : 30 b=711 s/mm^2 and 60 b=2855 s/mm^2 and 9b=0
