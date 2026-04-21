@@ -3,12 +3,12 @@
   path: index.md
   match: index.md
 - label: Acquisition
-  url: /acquisition/01-description.html
-  path: acquisition/01-description.md
+  url: /acquisition/index.html
+  path: acquisition/index.md
   match: acquisition/
 - label: Analyses
-  url: /analyses/01-preparation-bids.html
-  path: analyses/01-preparation-bids.md
+  url: /analyses/index.html
+  path: analyses/index.md
   match: analyses/
 - label: Tutorial
   url: /tutorial/index.html
