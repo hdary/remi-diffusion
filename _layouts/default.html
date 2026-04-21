@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-  <header class="site-header">
+  <header class="page-header site-header" role="banner">
     <div class="site-header__inner">
       <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Accueil du site">
         <img class="site-brand__logo" src="{{ '/assets/images/site/logo_remi.png' | relative_url }}" alt="Logo du site REMI">
@@ -20,17 +20,15 @@
     </div>
   </header>
 
-  <main class="site-main">
-    <article class="content-panel">
-      {% if page.actions %}
-      <div class="page-actions">
-        {% for action in page.actions %}
-        <a class="page-action{% if action.variant == 'primary' %} page-action--primary{% endif %}" href="{{ action.url | relative_url }}">{{ action.label }}</a>
-        {% endfor %}
-      </div>
-      {% endif %}
-      {{ content }}
-    </article>
+  <main class="main-content site-main" role="main">
+    {% if page.actions %}
+    <div class="page-actions">
+      {% for action in page.actions %}
+      <a class="page-action{% if action.variant == 'primary' %} page-action--primary{% endif %}" href="{{ action.url | relative_url }}">{{ action.label }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {{ content }}
   </main>
 </body>
 </html>
