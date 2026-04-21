@@ -1,13 +1,21 @@
 ---
 layout: default
 title: Tutorial
+actions:
+  - label: Guide de contribution
+    url: /tutorial/contributeur.html
+    variant: primary
+  - label: Notebooks
+    url: /tutorial/notebooks/
 ---
 
 ## Tutorial
 
 Ce point d'entrée est destiné aux utilisateurs du site. Il servira à regrouper les notebooks et les guides d'exécution pour lancer des analyses d'IRM de diffusion.
 
-## À venir
+Si tu veux modifier les pages Markdown du site ou ajouter une nouvelle entrée de navigation, commence par [le guide de contribution](./contributeur.md).
+
+## Notebooks
 
 Le dossier [notebooks](./notebooks/) accueillera les notebooks `.ipynb` pour exécuter ou documenter des pipelines de traitement.
 

@@ -22,6 +22,13 @@
 
   <main class="site-main">
     <article class="content-panel">
+      {% if page.actions %}
+      <div class="page-actions">
+        {% for action in page.actions %}
+        <a class="page-action{% if action.variant == 'primary' %} page-action--primary{% endif %}" href="{{ action.url | relative_url }}">{{ action.label }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
       {{ content }}
     </article>
   </main>

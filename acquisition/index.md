@@ -1,6 +1,21 @@
 ---
 layout: default
 title: Acquisition
+actions:
+  - label: Description
+    url: /acquisition/01-description.html
+  - label: DTI
+    url: /acquisition/02-pour-une-bonne-analyse-dti.html
+  - label: Tractographie
+    url: /acquisition/03-pour-une-bonne-tractographie.html
+  - label: DKI
+    url: /acquisition/04-pour-du-dki.html
+  - label: NODDI
+    url: /acquisition/05-pour-du-noddi.html
+  - label: Acquisition
+    url: /acquisition/06-acquisition.html
+  - label: Traitement de données
+    url: /acquisition/07-traitement-de-donnees.html
 ---
 
 ## Acquisition
