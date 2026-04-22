@@ -1,3 +1,4 @@
 doc/
 backup/
 *.docx
+.DS_Store
