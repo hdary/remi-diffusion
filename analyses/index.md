@@ -2,7 +2,7 @@
 layout: default
 title: Analyses
 actions:
-  - label: 1. BIDS
+  - label: 1.BIDS
     url: /analyses/01-preparation-bids.html
   - label: 2. QC
     url: /analyses/02-controle-qualite.html
