@@ -33,4 +33,4 @@ K.; Behrens, T. E. J. Advances in Diffusion MRI Acquisition and
 Processing in the Human Connectome Project. NeuroImage2013, 80,
 125--143. <https://doi.org/10.1016/j.neuroimage.2013.05.057>
 
-![](media/image2.png)
+![](../media/sensitivity_fiber_crossing.png)
