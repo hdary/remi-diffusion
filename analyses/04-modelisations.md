@@ -258,7 +258,7 @@ la dispersion de l'orientation grâce à 3 paramètres
 - Free water fraction (FWF) : permet d'estimer l'étendue de la
   contamination du LCR.
 
-![](media/image1.png)
+![NODDI](media/NODDI_model.jpg)
 
 Figure provenant de l'article .
 
