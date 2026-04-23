@@ -198,7 +198,7 @@ Attention pas toujours juste surtout au niveau de la bouche si artefact
 **Freesurfer synthstrip:**
 <https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/>
 
-### Recalage dans l'espcae MNI
+### Recalage dans l'espace MNI
 
 A COMPLETER
 
