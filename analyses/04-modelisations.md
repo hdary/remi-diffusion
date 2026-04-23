@@ -260,7 +260,7 @@ la dispersion de l'orientation grâce à 3 paramètres
 
 ![NODDI](../media/NODDI_model.jpg)
 
-Figure provenant de l'article .
+Figure provenant de l'article :  [[[10.1016/j.neuroimage.2021.118749](https://doi.org/10.1016/j.jneumeth.2020.108908)]{.underline}]([http://doi.org/10.1016/j.neuroimage.2021.118749](https://doi.org/10.1016/j.jneumeth.2020.108908))
 
 Autres informations :
 
