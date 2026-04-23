@@ -260,7 +260,7 @@ la dispersion de l'orientation grâce à 3 paramètres
 
 ![NODDI](../media/NODDI_model.jpg)
 
-Figure provenant de l'article :  [[[10.1016/j.neuroimage.2021.118749](https://doi.org/10.1016/j.jneumeth.2020.108908)]{.underline}]([http://doi.org/10.1016/j.neuroimage.2021.118749](https://doi.org/10.1016/j.jneumeth.2020.108908))
+Figure provenant de l'article : http://doi.org/10.1016/j.neuroimage.2021.118749
 
 Autres informations :
 
@@ -276,8 +276,7 @@ Autres informations :
   reproductibilité inter-scanner
 
 - Utilisation possible de « tissue-weighted means » pour réduire le
-  biais (article de Parker et al., 2021
-  [[10.1016/j.neuroimage.2021.118749]{.underline}](http://doi.org/10.1016/j.neuroimage.2021.118749)
+  biais ( [article de Parker et al., 2021](http://doi.org/10.1016/j.neuroimage.2021.118749)
   )
 
 La validité des hypothèses du modèle est en débat au sein de la
