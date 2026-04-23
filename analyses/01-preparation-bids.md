@@ -9,7 +9,7 @@ bvec / bval
 
 json
 
-IntendedFor (fmap)
+IntendedFor (fmap) - B0FieldSource/B0FieldIdentifier - MultipartID
 
 DICOM et autres
 

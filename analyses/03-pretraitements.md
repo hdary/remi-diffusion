@@ -115,7 +115,7 @@ Attention : la version à disposition dans la dernière version de MRTrix
   l'utiliser sans mais les résultats sont moins intéressants)
 
 - Fonctionne sur des données en 4D + attention au type de données
-  (utiliser plutôt mrcat de MRTrix por merger les b0 si beosin)
+  (utiliser plutôt mrcat de MRTrix por merger les b0 si besoin)
 
 **Patch2Self :**
 <https://docs.dipy.org/stable/examples_built/preprocessing/denoise_patch2self.html#sphx-glr-examples-built-preprocessing-denoise-patch2self-py>
@@ -198,7 +198,7 @@ Attention pas toujours juste surtout au niveau de la bouche si artefact
 **Freesurfer synthstrip:**
 <https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/>
 
-### Recalage dans l'espcae MNI
+### Recalage dans l'espace MNI
 
 A COMPLETER
 
