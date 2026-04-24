@@ -2,6 +2,8 @@ site_name: IRM de diffusion
 site_description: Synthèse opérationnelle des bonnes pratiques en IRM de diffusion.
 theme:
   name: material
+  logo: assets/images/site/logo_remi.png
+  favicon: assets/images/site/logo_remi.png
   features:
     - navigation.sections
     - navigation.top
