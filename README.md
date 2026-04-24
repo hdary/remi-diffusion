@@ -19,12 +19,12 @@ il est disponible à l'adresse suivante : [remi-diffusion](https://hdary.github.
 ### Acquisition
 
 1. [Description](./docs/acquisition/01-description.md)
-2. [Pour une bonne analyse DTI](./acquisition/02-pour-une-bonne-analyse-dti.md)
-3. [Pour une bonne tractographie](./acquisition/03-pour-une-bonne-tractographie.md)
-4. [Pour du DKI (Diffusion Kurtosis Imaging)](./acquisition/04-pour-du-dki.md)
-5. [Pour du NODDI](./acquisition/05-pour-du-noddi.md)
-6. [Acquisition](./acquisition/06-acquisition.md)
-7. [Traitement de données](./acquisition/07-traitement-de-donnees.md)
+2. [Pour une bonne analyse DTI](./docs/acquisition/02-pour-une-bonne-analyse-dti.md)
+3. [Pour une bonne tractographie](./docs/acquisition/03-pour-une-bonne-tractographie.md)
+4. [Pour du DKI (Diffusion Kurtosis Imaging)](./docs/acquisition/04-pour-du-dki.md)
+5. [Pour du NODDI](./docs/acquisition/05-pour-du-noddi.md)
+6. [Acquisition](./docs/acquisition/06-acquisition.md)
+7. [Traitement de données](./docs/acquisition/07-traitement-de-donnees.md)
 
 ### Analyses
 
