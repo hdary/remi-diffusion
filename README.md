@@ -18,7 +18,7 @@ il est disponible à l'adresse suivante : [remi-diffusion](https://hdary.github.
 
 ### Acquisition
 
-1. [Description](./acquisition/01-description.md)
+1. [Description](./docs/acquisition/01-description.md)
 2. [Pour une bonne analyse DTI](./acquisition/02-pour-une-bonne-analyse-dti.md)
 3. [Pour une bonne tractographie](./acquisition/03-pour-une-bonne-tractographie.md)
 4. [Pour du DKI (Diffusion Kurtosis Imaging)](./acquisition/04-pour-du-dki.md)
