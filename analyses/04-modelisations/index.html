@@ -1,0 +1,2129 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Synthèse opérationnelle des bonnes pratiques en IRM de diffusion.">
+      
+      
+      
+      
+        <link rel="prev" href="../03-pretraitements/">
+      
+      
+        <link rel="next" href="../05-tractographie/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/site/logo_remi.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Modélisations - IRM de diffusion</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modelisations" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="IRM de diffusion" class="md-header__button md-logo" aria-label="IRM de diffusion" data-md-component="logo">
+      
+  <img src="../../assets/images/site/logo_remi.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IRM de diffusion
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Modélisations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IRM de diffusion" class="md-nav__button md-logo" aria-label="IRM de diffusion" data-md-component="logo">
+      
+  <img src="../../assets/images/site/logo_remi.png" alt="logo">
+
+    </a>
+    IRM de diffusion
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acquisition
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Acquisition
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/01-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/02-pour-une-bonne-analyse-dti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyse DTI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/03-pour-une-bonne-tractographie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tractographie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/04-pour-du-dki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DKI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/05-pour-du-noddi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NODDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/06-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acquisition détaillée
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/07-traitement-de-donnees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traitement de données
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traitement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Traitement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-preparation-bids/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préparation BIDS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-controle-qualite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contrôle qualité
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-pretraitements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prétraitements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modélisations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modélisations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modelisations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modélisations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diffusion-tensor-imaging-dti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffusion Tensor Imaging (DTI)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diffusion Tensor Imaging (DTI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mini-bibliographie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mini bibliographie :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications-partielles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explications (partielles):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outils-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outils disponibles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outils disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mrtrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MRTrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FSL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diffusion-kurtosis-imaging-dki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffusion Kurtosis Imaging (DKI)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diffusion Kurtosis Imaging (DKI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mini-bibliographie_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mini bibliographie:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications-partielles_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explications (partielles):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outils-disponibles_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outils disponibles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outils disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fsl_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FSL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dipy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dipy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        -
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diffusion-kurtosis-estimator-dke" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffusion Kurtosis Estimator (DKE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        -
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dki-matlab-cair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DKI matlab (CAIR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mrtrix_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MRTrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neurite-orientation-dispersion-and-density-imaging-noddi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neurite Orientation Dispersion and Density Imaging (NODDI)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Neurite Orientation Dispersion and Density Imaging (NODDI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mini-bibliographie_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mini bibliographie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications-partielles_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explications (partielles)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outils-disponibles_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outils disponibles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outils disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#original-noddi-matlab-toolbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        « Original » NODDI Matlab toolbox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amico-accelerated-microstructure-imaging-via-convex-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AMICO (Accelerated Microstructure Imaging via Convex Optimization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cudimot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cuDIMOT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mdt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MDT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sandi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SANDI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autres-modeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autres modèles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-tractographie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tractographie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-analyses-voxel-wise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyses voxel-wise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutoriel
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutoriel
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/notebooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributeur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributeur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#modelisations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modélisations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diffusion-tensor-imaging-dti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffusion Tensor Imaging (DTI)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diffusion Tensor Imaging (DTI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mini-bibliographie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mini bibliographie :
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications-partielles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explications (partielles):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outils-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outils disponibles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outils disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mrtrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MRTrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FSL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diffusion-kurtosis-imaging-dki" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffusion Kurtosis Imaging (DKI)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diffusion Kurtosis Imaging (DKI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mini-bibliographie_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mini bibliographie:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications-partielles_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explications (partielles):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outils-disponibles_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outils disponibles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outils disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fsl_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FSL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dipy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dipy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        -
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diffusion-kurtosis-estimator-dke" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diffusion Kurtosis Estimator (DKE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        -
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dki-matlab-cair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DKI matlab (CAIR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mrtrix_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MRTrix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#neurite-orientation-dispersion-and-density-imaging-noddi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neurite Orientation Dispersion and Density Imaging (NODDI)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Neurite Orientation Dispersion and Density Imaging (NODDI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mini-bibliographie_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mini bibliographie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explications-partielles_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explications (partielles)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outils-disponibles_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outils disponibles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outils disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#original-noddi-matlab-toolbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        « Original » NODDI Matlab toolbox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amico-accelerated-microstructure-imaging-via-convex-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AMICO (Accelerated Microstructure Imaging via Convex Optimization)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cudimot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cuDIMOT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mdt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MDT
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sandi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SANDI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autres-modeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autres modèles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Modélisations</h1>
+
+<h2 id="modelisations">Modélisations</h2>
+<p>Les explications données dans cette parties sont partielles et la liste
+des outils disponibles n'est pas exhaustive.</p>
+<h2 id="diffusion-tensor-imaging-dti">Diffusion Tensor Imaging (DTI)</h2>
+<h4 id="mini-bibliographie">Mini bibliographie :</h4>
+<ul>
+<li>
+<p>Basser PJ, Mattiello J, LeBihan D. Estimation of the effective
+  selfdiffusion tensor from the NMR spin echo. J Magn Reson B 1994;103:
+  247-254.</p>
+</li>
+<li>
+<p>Horsfield MA, Jones DK. Applications of diffusion-weighted and
+  diffusion tensor MRI to white matter diseases --- A review. NMR Biomed
+  2002;15:570-577</p>
+</li>
+</ul>
+<h4 id="explications-partielles">Explications (partielles):</h4>
+<p>Le tenseur de diffusion (DT) décrit la diffusion des molécules d'eau à
+l'aide d'un modèle gaussien et a pour but de caractériser la diffusion
+(coefficient d'anisotropie, directions privilégiées dans l'espace ..).
+Le DTI est basé sur l'hypothèse que la diffusion des particules d'eau
+dans la microstructure des tissus suit une distribution gaussienne, ce
+qui est le cas dans les régions où les faisceaux de fibres sont
+« cohérents »</p>
+<p>On peut extraire du DTI plusieurs métriques quantitatifs :</p>
+<ul>
+<li>
+<p>Fractional Anisotropy (FA) : décrit la quantité de diffusion qui est
+  anisotrope et montre donc la direction privilégiée de la diffusion</p>
+</li>
+<li>
+<p>Mean Diffusivity (MD) = Apparrent Diffusion Coefficient (ADC) :
+  diffusion moyenne</p>
+</li>
+<li>
+<p>Axial Diffusivity (AD) : diffusion dans la direction axiale</p>
+</li>
+<li>
+<p>Radial Diffusivity (RD) : diffusion dans la direction radiale
+  (perpendiculaire à la diffusion axiale)</p>
+</li>
+<li>
+<p>Trace : sommes des valeurs propres du tenseur</p>
+</li>
+<li>
+<p>FA color</p>
+</li>
+</ul>
+<p>Le DTI est très utile en clinique.</p>
+<p>Remarques en vrac:</p>
+<ul>
+<li>
+<p>Il faut au moins 6 directions pour obtenir un tenseur de diffusion</p>
+</li>
+<li>
+<p>Dans les zones où l'hétérogénéité des tissus est importantes (cortex
+  cérébral par ex où il y a beaucoup de fibres qui se croisent), le
+  comportement de la diffusion de l'eau dans les tissus s'écarte du
+  comportement gaussien supposé, il est donc difficile d'interpréter les
+  paramètres dérivées du DTI</p>
+</li>
+</ul>
+<p>AJOUTER DES RESSOURCES + IMAGES</p>
+<h4 id="outils-disponibles">Outils disponibles</h4>
+<h5 id="mrtrix">MRTrix</h5>
+<p>Il est possible d'obtenir le DTI avec MRTrix via la commande puis
+d'obtenir les métriques avec la commande .</p>
+<h5 id="fsl">FSL</h5>
+<p>FSL permet d'obtenir le DTI et d'obtenir les métriques avec la commande</p>
+<h2 id="diffusion-kurtosis-imaging-dki">Diffusion Kurtosis Imaging (DKI)</h2>
+<h4 id="mini-bibliographie_1">Mini bibliographie:</h4>
+<ul>
+<li>Papiers « originaux » :</li>
+</ul>
+<blockquote>
+<p>Jensen JH « Diffusional Kurtosis Imaging: The Quantification of Non-
+Gaussian Water Diffusion by Means of Magnetic Resonance
+Imaging » ;Magn Reson Med 2005; (1er papier sur le DKI)</p>
+<p>Jensen JH « MRI Quantification of Non-Gaussian Water Diffusion by
+Kurtosis Analysis » ; NMR Biomed. 2010</p>
+</blockquote>
+<ul>
+<li>Reproductibilité :</li>
+</ul>
+<blockquote>
+<p>Loxlan W. Kasa « Evaluating High Spatial Resolution Diffusion Kurtosis
+Imaging at 3T: Reproducibility and Quality of Fit » ; Magn Reson Med
+2021</p>
+</blockquote>
+<ul>
+<li>Autres :</li>
+</ul>
+<h4 id="explications-partielles_1">Explications (partielles):</h4>
+<p>Le modèle DTI suppose que la diffusion des molécules d'eau suit une
+distribution Gaussienne. Cette hypothèse est incorrecte pour les tissus
+biologiques complexes. Ce comportement non gaussien est encore plus
+important pour des gradients forts (si on augmente les valeurs de b)
+et/ou si on utilise un temps d'écho long.</p>
+<p>Le paramètre statistique "Kurtosis" (K) est égale à 0 dans le cas d'une
+distribution gaussienne. Pour la diffusion de l'eau dans les tissus
+biologique on a K&gt;0.</p>
+<p>Le modèle du DKI est une extension du modèle DTI qui permet de mieux
+quantifier le degré de "non-gaussianité" de la diffusion de l'eau à
+l'aide du tenseur de kurtosis (KT).</p>
+<p>Pourquoi utiliser le DKI ?</p>
+<ul>
+<li>
+<p>Caractériser l'hétérogénéité de la microstructure des tissus</p>
+</li>
+<li>
+<p>Obtenir des des paramètres biophysiques comme la densité des fibres
+  axonales</p>
+</li>
+</ul>
+<p>Le DKI permet d'obtenir les cartes "classiques" du modèle DTI (FA,
+MD..). Ces cartes sont similaires à celles obtenues avec le DTI (mais
+pas exactement égales). On obtient d'autres cartes spécifiques au DKI.
+Les cartes suivantes dépendent à la fois du tenseur de diffusion et du
+tenseur du Kurtosis :</p>
+<ul>
+<li>
+<p>Mean kurtosis (MK) (plus important dans la WM car plus compartimentée)</p>
+</li>
+<li>
+<p>Axial Kurtosi (AK)</p>
+</li>
+<li>
+<p>Radial Kurtosis (RK) (avec des valeurs normalement plus important que
+  le AK car le comportement non-Gaussien est censé être plus important
+  perpendiculairement aux fibres de WM)</p>
+</li>
+</ul>
+<p>Les cartes suivantes dépendent seulement du tenseur de kurtosis :</p>
+<ul>
+<li>
+<p>Mean of the Kurtosis tensor (MKT) (similaire au MK)</p>
+</li>
+<li>
+<p>Kurtosis fractional anisotropy (KFA)</p>
+</li>
+</ul>
+<p>Ces différentes mesures dépendent des propriétés microstructurelles et
+des propriétés mésoscopiques (dispersions des fibres, intersection des
+fibres).</p>
+<p>Remarques en vrac:</p>
+<ul>
+<li>
+<p>Pour faire du DKI il est nécessaire d'avoir des données multi-shell
+  (au moins 2 shell en plus des b=0 s/mm²) et d'avoir au moins 15
+  directions de diffusion différentes.</p>
+</li>
+<li>
+<p>Les effets de la diffusion Kurtosis sont plus visibles pour les
+  valeurs de b &gt; 1500 s/mm²</p>
+</li>
+<li>
+<p>Valeurs habituelles de K dans le cerveau : CSF~0, GM~0.7, WM~1</p>
+</li>
+<li>
+<p>Le DKI est sensible aux bruits et aux artefacts. Par ex il peut être
+  mal estimé et avoir des valeurs impossibles/ négatives dans les
+  régions où la diffusivité radiale est faible</p>
+</li>
+<li>
+<p>Constrained optimization for DKI : pour éviter les valeurs de DKI
+  physiquement impossibles on peut utiliser un fit contraint pour
+  l'estimation du DKI ()</p>
+</li>
+<li>
+<p>Mean signal diffusion kurtosis imaging (MSDKI) : une autre méthode
+  consiste à caractériser le kurtosis à partir des signaux moyens des
+  données acquises dans toutes les directions pour chaque valeur de b =
+  (powder-averaged signals) afin de limiter la sensibilité au bruit et
+  aux artefacts. Les cartes obtenues dans ce cas ne dépend pas de la
+  distribution des fibres ()</p>
+</li>
+</ul>
+<h4 id="outils-disponibles_1">Outils disponibles</h4>
+<h5 id="fsl_1">FSL</h5>
+<p>L'outil « <strong>dtifit</strong> » a une option pour calculer les paramètres de
+kurtosis :</p>
+<p><strong>--kurt</strong> Output mean kurtosis map (for multi-shell data)</p>
+<p><strong>--kurtdir</strong> Output maps of kurtosis along each eigenvector: K1, K2,
+and K3 (for multi-shell data)</p>
+<h4 id="dipy">Dipy</h4>
+<p>La librairie python Dipy permet de facilement estimer le DKI et
+d'obtenir les cartes. Plusieurs tutoriels sont disponibles :</p>
+<h2 id="-">-</h2>
+<h4 id="diffusion-kurtosis-estimator-dke">Diffusion Kurtosis Estimator (DKE)</h4>
+<p>Logiciel pour estimer le DKI (dernière MAJ en 2015)</p>
+<h2 id="-_1">-</h2>
+<h5 id="dki-matlab-cair">DKI matlab (CAIR)</h5>
+<p>Toolboxe/ code matlab pour l'estimation du DKI</p>
+<h5 id="mrtrix_1">MRTrix</h5>
+<p>Il est possible d'obtenir le DKI avec MRTrix via la commande et l'option
+--dkt .
+Dans la futur version (actuellement en version dev) il sera possible
+d'obtenir les cartes dérivées du DKI avec la commande (mais pas possible
+actuellement, il faut revenir aux définitions des cartes et les calculer
+à partir du tenseur obtenu ...)</p>
+<h2 id="neurite-orientation-dispersion-and-density-imaging-noddi">Neurite Orientation Dispersion and Density Imaging (NODDI)</h2>
+<h4 id="mini-bibliographie_2">Mini bibliographie</h4>
+<ul>
+<li>
+<p>Papier original :
+  Zhang, H., 2012. NODDI: practical in vivo neurite orientation
+  dispersion and density imaging of the human brain. Neuroimage 61,
+  1000--1016.</p>
+</li>
+<li>
+<p>Les applications de la NODDI en recherche clinique :
+  Kamiya, Kouhei . "NODDI in Clinical Research." <em>Journal of
+  Neuroscience Methods</em> 346 (December 2020): 108908. .</p>
+</li>
+<li>
+<p>Reproductibilité :
+  Andica, C., 2019b. Scan-rescan and inter-vendor reproducibility of
+  neurite orientation dispersion and density imaging metrics.
+  Neuroradiology.</p>
+</li>
+</ul>
+<p>Chung, A.W., Seunarine, K.K., Clark, C.A., 2016. NODDI reproducibility
+  and variability with magnetic field strength: a comparison between 1.5
+  T and 3 T. Hum. Brain Mapp. 37, 4550--4565.</p>
+<h4 id="explications-partielles_2">Explications (partielles)</h4>
+<p>Il y a 2 approches possibles pour extraire des informations des données
+de diffusion. Les approches « représentation de signaux » fournissent
+des statistiques sur le signal observé sans s'appuyer sur des
+hypothèses concernant les tissus (DTI, DKI..). Les approches « modèles
+biophysiques » paramétrisent le signal de diffusion IRM comme une
+fonction des paramètres biophysiques significatifs comme la densité des
+axones.</p>
+<p>La NODDI (Neurite Orientation Dispersion and Density Imaging) est un
+modèle biophysique qui doit permettre d'obtenir des marqueurs sur la
+microstructure du tissue du cerveau plus spécifiques que ceux obtenus
+avec des marqueurs plus classiques comme la FA.</p>
+<p>La NODDI permet de caractérisé la microstructure à l'intérieur d'un
+voxel en fournissant des informations sur la densité de neurites et sur
+la dispersion de l'orientation grâce à 3 paramètres</p>
+<ul>
+<li>
+<p>intra-cellular volume fraction (ICVF) = neurite density index (NDI) :
+  quantifie la densité d'empilement des neurites / estime la fraction de
+  volume des neurites</p>
+</li>
+<li>
+<p>Orientation dispersion index (ODI) : estime la variabilité de
+  l'orientation des neurites (de 0 à 1 avec 0 = tous parfaitement
+  alignés et 1 = complètement isotrope)</p>
+</li>
+<li>
+<p>Free water fraction (FWF) : permet d'estimer l'étendue de la
+  contamination du LCR.</p>
+</li>
+</ul>
+<p><img alt="NODDI" src="../media/NODDI_model.jpg" /></p>
+<p>Figure provenant de l'article : http://doi.org/10.1016/j.neuroimage.2021.118749</p>
+<p>Autres informations :</p>
+<ul>
+<li>
+<p>Le modèle NODDI assume que la diffusion suit une distribution
+  Gaussienne</p>
+</li>
+<li>
+<p>Lors du développement du cerveau on observe une augmentation de la
+  dispersion de l'orientation des neurites</p>
+</li>
+<li>
+<p>La répétabilité entre 2 acquisitions (inter-scanner) a été démontrée
+  dans plusieurs articles sur le même IRM mais grosse différence entre
+  3T et 1.5T + la reproductibilité inter-scanner est plus faible que la
+  reproductibilité inter-scanner</p>
+</li>
+<li>
+<p>Utilisation possible de « tissue-weighted means » pour réduire le
+  biais ( <a href="http://doi.org/10.1016/j.neuroimage.2021.118749">article de Parker et al., 2021</a>
+  )</p>
+</li>
+</ul>
+<p>La validité des hypothèses du modèle est en débat au sein de la
+communauté. Exemple de ce qui est débattu :</p>
+<ul>
+<li>
+<p>le nombre de compartiment (intra-neutrite, extra-neutrite, free water)</p>
+</li>
+<li>
+<p>le fait que la distribution de la diffusion suit une loi gaussienne
+  (et qu'on néglige donc les échanges entre les compartiments et les
+  effets non-gaussien dans chaque compartiment)</p>
+</li>
+<li>
+<p>le fait d'avoir fixé et contraint certains paramètres du modèle. Par
+  exemple le fait d'avoir fixé la diffusivité parallèle alors qu'elle
+  peut être différente en fonction de la population (enfant ou adulte)
+  et en focntion du mileu (WM ou GM)</p>
+</li>
+</ul>
+<p>Cependant, il a été montré que la NODDI est plus spécifique que la FA et
+la NODDI peut fournir des biomarqueurs utiles surtout si l'effet de la
+maladie est plus important que les biais introduits.</p>
+<h4 id="outils-disponibles_2">Outils disponibles</h4>
+<h5 id="original-noddi-matlab-toolbox">« Original » NODDI Matlab toolbox</h5>
+<p>Code matlab :</p>
+<p>Implémentation de l'article original de Zhang. Assez long à tourner</p>
+<h5 id="amico-accelerated-microstructure-imaging-via-convex-optimization">AMICO (Accelerated Microstructure Imaging via Convex Optimization)</h5>
+<p>Paquet python :</p>
+<p>Implémentation comme décrit dans l'article : Daducci, A.,
+Canales-Rodríguez, E.J., Zhang, H., Dyrby, T.B., Alexander, D.C.,
+Thiran, J.P., 2015. Accelerated microstructure imaging via Convex
+Optimization (AMICO) from diffusion MRI data. Neuroimage 105, 32--44.
+https://doi.org/10.1016/j. neuroimage.2014.10.026</p>
+<h5 id="cudimot">cuDIMOT</h5>
+<p>Toolboxe de FSL / Besoin d'avoir une carte NVIDIA GPU et CUDA
+d'installer</p>
+<p>Implémentation comme décrit dans l'article : Hernandez-Fernandez M.,
+Reguly I., Jbabdi S, Giles M, Smith S., Sotiropoulos S.N. "Using GPUs to
+accelerate computational diffusion MRI: From microstructure estimation
+to tractography and connectomes."NeuroImage 188 (2019): 598-615.</p>
+<h5 id="mdt">MDT</h5>
+<p>Paquet python :</p>
+<h2 id="sandi">SANDI</h2>
+<p>Modèle adapté au gris. Attention à ne pas l'utiliser pour le blanc.</p>
+<p>A COMPLETER</p>
+<h2 id="autres-modeles">Autres modèles</h2>
+<p>HARDI, CHARMED .., SMT</p>
+<p>À compléter</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
