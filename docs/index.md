@@ -36,3 +36,6 @@ pratique.
 ### Tutoriel
 
 1. [Tutoriel utilisateur](./tutorial/index.md)
+
+### Guide contributeur
+2. [Guide de contribution](./contributeur.md)

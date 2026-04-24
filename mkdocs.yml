@@ -20,15 +20,26 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Passer au mode clair
-
 nav:
   - Accueil: index.md
   - Acquisition:
-    - Les schémas d'acquisitions: acquisition/01-schemas-acquisitions.md
-    - Préparation BIDS: acquisition/02-preparation-bids.md
-    - Contrôle qualité: acquisition/03-controle-qualite.md
+    - Introduction: acquisition/index.md
+    - Description: acquisition/01-description.md
+    - Analyse DTI: acquisition/02-pour-une-bonne-analyse-dti.md
+    - Tractographie: acquisition/03-pour-une-bonne-tractographie.md
+    - DKI: acquisition/04-pour-du-dki.md
+    - NODDI: acquisition/05-pour-du-noddi.md
+    - Acquisition détaillée: acquisition/06-acquisition.md
+    - Traitement de données: acquisition/07-traitement-de-donnees.md
   - Traitement:
-    - Prétraitements: traitement/01-pretraitements.md
-    - Modélisations: traitement/02-modelisations.md
-    - Tractographie: traitement/03-tractographie.md
-    - Analyses voxel-wise: traitement/04-analyses-voxel-wise.md
+    - Introduction: analyses/index.md
+    - Préparation BIDS: analyses/01-preparation-bids.md
+    - Contrôle qualité: analyses/02-controle-qualite.md
+    - Prétraitements: analyses/03-pretraitements.md
+    - Modélisations: analyses/04-modelisations.md
+    - Tractographie: analyses/05-tractographie.md
+    - Analyses voxel-wise: analyses/06-analyses-voxel-wise.md
+  - Tutoriel:
+    - Introduction: tutorial/index.md
+    - Notebooks: tutorial/notebooks/README.md
+  - Contributeur: contributeur.md
