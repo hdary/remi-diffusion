@@ -12,7 +12,7 @@ pratiques, des références clés et une cartographie des outils (non
 exhaustive) couramment utilisés ainsi que quelques « tips » issus de la
 pratique.
 
-il est disponible à l'adresse suivante : remi-diffusion.github.io
+il est disponible à l'adresse suivante : [remi-diffusion](https://hdary.github.io/remi-diffusion/)
 
 ## Table des matières
 

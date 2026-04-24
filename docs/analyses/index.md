@@ -2,17 +2,17 @@
 layout: default
 title: Analyses
 actions:
-  - label: BIDS
+  - label: 1. BIDS
     url: /analyses/01-preparation-bids.html
-  - label: QC
+  - label: 2. QC
     url: /analyses/02-controle-qualite.html
-  - label: Prétraitements
+  - label: 3. Prétraitements
     url: /analyses/03-pretraitements.html
-  - label: Modélisations
+  - label: 4. Modélisations
     url: /analyses/04-modelisations.html
-  - label: Tractographie
+  - label: 5. Tractographie
     url: /analyses/05-tractographie.html
-  - label: Voxels
+  - label: 6. Voxels
     url: /analyses/06-analyses-voxel-wise.html
 ---
 

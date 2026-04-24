@@ -22,7 +22,7 @@ Le rationel est le suivant: De plus grandes valeurs de b permettent
 d'avoir une meilleur résolution angulaire pour résoudre les croisements
 de fibres, mais plus b est grand et plus le SNR est faible....
 
-![](media/image1.png)
+![image-tracto](../media/image1.png)
 
 Voir les tests faits par le HCP:
 
@@ -33,4 +33,4 @@ K.; Behrens, T. E. J. Advances in Diffusion MRI Acquisition and
 Processing in the Human Connectome Project. NeuroImage2013, 80,
 125--143. <https://doi.org/10.1016/j.neuroimage.2013.05.057>
 
-![](media/image2.png)
+![](../media/sensitivity_fiber_crossing.png)

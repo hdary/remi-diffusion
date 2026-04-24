@@ -258,9 +258,9 @@ la dispersion de l'orientation grâce à 3 paramètres
 - Free water fraction (FWF) : permet d'estimer l'étendue de la
   contamination du LCR.
 
-![](media/image1.png)
+![NODDI](../media/NODDI_model.jpg)
 
-Figure provenant de l'article .
+Figure provenant de l'article : http://doi.org/10.1016/j.neuroimage.2021.118749
 
 Autres informations :
 
@@ -276,8 +276,7 @@ Autres informations :
   reproductibilité inter-scanner
 
 - Utilisation possible de « tissue-weighted means » pour réduire le
-  biais (article de Parker et al., 2021
-  [[10.1016/j.neuroimage.2021.118749]{.underline}](http://doi.org/10.1016/j.neuroimage.2021.118749)
+  biais ( [article de Parker et al., 2021](http://doi.org/10.1016/j.neuroimage.2021.118749)
   )
 
 La validité des hypothèses du modèle est en débat au sein de la
