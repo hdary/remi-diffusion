@@ -1,0 +1,34 @@
+site_name: IRM de diffusion
+site_description: Synthèse opérationnelle des bonnes pratiques en IRM de diffusion.
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+  language: fr
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Passer au mode sombre
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Passer au mode clair
+
+nav:
+  - Accueil: index.md
+  - Acquisition:
+    - Les schémas d'acquisitions: acquisition/01-schemas-acquisitions.md
+    - Préparation BIDS: acquisition/02-preparation-bids.md
+    - Contrôle qualité: acquisition/03-controle-qualite.md
+  - Traitement:
+    - Prétraitements: traitement/01-pretraitements.md
+    - Modélisations: traitement/02-modelisations.md
+    - Tractographie: traitement/03-tractographie.md
+    - Analyses voxel-wise: traitement/04-analyses-voxel-wise.md
