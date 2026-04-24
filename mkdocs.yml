@@ -3,7 +3,6 @@ site_description: Synthèse opérationnelle des bonnes pratiques en IRM de diffu
 theme:
   name: material
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.top
     - search.suggest
