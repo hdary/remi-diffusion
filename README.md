@@ -28,14 +28,14 @@ il est disponible à l'adresse suivante : [remi-diffusion](https://hdary.github.
 
 ### Analyses
 
-1. [Préparation des données - BIDS pour la diffusion](./analyses/01-preparation-bids.md)
-2. [Contrôle qualité données brutes](./analyses/02-controle-qualite.md)
-3. [Prétraitements](./analyses/03-pretraitements.md)
-4. [Modélisations](./analyses/04-modelisations.md)
-5. [Tractographie](./analyses/05-tractographie.md)
-6. [Analyses voxel-wise (TBSS, fixel-based analysis)](./analyses/06-analyses-voxel-wise.md)
+1. [Préparation des données - BIDS pour la diffusion](./docs/analyses/01-preparation-bids.md)
+2. [Contrôle qualité données brutes](./docs/analyses/02-controle-qualite.md)
+3. [Prétraitements](./docs/analyses/03-pretraitements.md)
+4. [Modélisations](./docs/analyses/04-modelisations.md)
+5. [Tractographie](./docs/analyses/05-tractographie.md)
+6. [Analyses voxel-wise (TBSS, fixel-based analysis)](./docs/analyses/06-analyses-voxel-wise.md)
 
 ### Tutoriel
 
-1. [Tutoriel utilisateur](./tutorial/index.md)
+1. [Tutoriel utilisateur](./docs/tutorial/index.md)
 
