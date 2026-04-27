@@ -22,7 +22,7 @@ Le rationel est le suivant: De plus grandes valeurs de b permettent
 d'avoir une meilleur résolution angulaire pour résoudre les croisements
 de fibres, mais plus b est grand et plus le SNR est faible....
 
-![image-tractographie](./assets/images/image1.png)
+![image-tractographie](../assets/images/image1.png)
 
 Voir les tests faits par le HCP:
 
