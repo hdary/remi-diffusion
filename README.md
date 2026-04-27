@@ -5,7 +5,7 @@ title: IRM de Diffusion
 
 # IRM de Diffusion
 
-Cett document propose une synthèse opérationnelle des bonnes pratiques en
+Ce document propose une synthèse opérationnelle des bonnes pratiques en
 IRM de diffusion. Il ne vise pas à réexpliquer l'ensemble des concepts
 théoriques, mais à fournir des rappels ciblés, des recommandations
 pratiques, des références clés et une cartographie des outils (non
