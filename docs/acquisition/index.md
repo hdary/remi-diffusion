@@ -24,10 +24,10 @@ Cette section regroupe les recommandations liées au design d'acquisition en IRM
 
 ### Pages de la section
 
-1. [Description](./01-description.html)
-2. [Pour une bonne analyse DTI](./02-pour-une-bonne-analyse-dti.html)
-3. [Pour une bonne tractographie](./03-pour-une-bonne-tractographie.html)
-4. [Pour du DKI (Diffusion Kurtosis Imaging)](./04-pour-du-dki.html)
-5. [Pour du NODDI](./05-pour-du-noddi.html)
-6. [Acquisition](./06-acquisition.html)
-7. [Traitement de données](./07-traitement-de-donnees.html)
+1. [Description](/acquisition/01-description.html)
+2. [Pour une bonne analyse DTI](/acquisition/02-pour-une-bonne-analyse-dti.html)
+3. [Pour une bonne tractographie](/acquisition/03-pour-une-bonne-tractographie.html)
+4. [Pour du DKI (Diffusion Kurtosis Imaging)](/acquisition/04-pour-du-dki.html)
+5. [Pour du NODDI](/acquisition/05-pour-du-noddi.html)
+6. [Acquisition](/acquisition/06-acquisition.html)
+7. [Traitement de données](/acquisition/07-traitement-de-donnees.html)
