@@ -3,7 +3,7 @@ layout: default
 title: Acquisition
 actions:
   - label: 1. Description
-    url: /acquisition/01-description.html
+    url: /docs/acquisition/01-description.html
   - label: 2. DTI
     url: /acquisition/02-pour-une-bonne-analyse-dti.html
   - label: 3. Tractographie
