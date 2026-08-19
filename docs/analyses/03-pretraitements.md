@@ -3,8 +3,6 @@ layout: default
 title: Prétraitements
 ---
 
-## Prétraitements
-
 ## Outils disponibles
 
 La liste suivantes des outils disponibles pour les prétraitements n'est
@@ -19,19 +17,18 @@ le document, à l'étape correspondante.
 #### Scilpy
 
 Outils issus du Sherbrooke Connectivity Imaging Lab (SCIL)
-<https://apertureneuro.org/article/154022-tractography-analysis-with-the-scilpy-toolbox>
-<https://scilpy.readthedocs.io/en/latest/>
+
+Voir la documentation: <https://scilpy.readthedocs.io/en/latest/>
 
 #### Dipy
 
-Voir documentation :
-<https://docs.dipy.org/stable/examples_built/preprocessing/index.html>
-Plusieurs tutorials disponibles sur le site.
-Dipy permet également de faire la suite des analyses
+Voir documentation: <https://docs.dipy.org/stable/examples_built/preprocessing/index.html>
+
+Plusieurs tutorials disponibles sur le site. Dipy permet également de faire la suite des analyses
 
 #### Mrtrix
 
-Voir documentation :
+Voir documentation : <https://mrtrix.readthedocs.io/en/latest/> 
 
 MRtrix propose plusieurs commandes pour faire le prétraitement standards
 
@@ -47,7 +44,7 @@ MRTrix permet également de faire la suite des analyses (DTI, tracto .. )
 
 #### QSIPrep
 
-Voir documentation :
+Voir documentation : <https://qsiprep.readthedocs.io/en/latest/>
 
 Permet de réaliser des prétraitements standards (modulable). Il intègre
 des outils de plusieurs autres logiciels (MRTrix, FSL, Dipy, DSI Studio,
@@ -74,6 +71,7 @@ Informations utiles :
 #### Designer-v2
 
 Voir documentation : <https://nyu-diffusionmri.github.io/DESIGNER-v2/>
+
 Permet de réaliser des prétraitements standards (modulable). Plusieurs
 denoising sont possibles (adaptative patching, PCA, complex dat ..).
 
@@ -83,14 +81,14 @@ Voir documentation : <https://www.nipreps.org/dmriprep/>
 
 #### PreQual
 
-Voir la documentation :
+Voir la documentation : <https://github.com/MASILab/PreQual>
 
 Permet de réaliser les prétraitement (avec Synb0-Disco) et propose un
 rapport pour faire le QC. Utilisation via un container singularity
 
 #### MicaPipe
 
-Voir la documentation :
+Voir la documentation : <https://micapipe.readthedocs.io/en/latest/> 
 
 Permet de faire les prétraitement de plusieurs modalités dont la
 diffusion. Utilise des commandes MRTrix et ANTs. Permet également de
@@ -127,17 +125,17 @@ plusieurs lignes parallèles fines immédiatement adjacentes aux
 interfaces à contraste élevé.
 
 Le partial Fourier très utilisé dans les acquisitions accentue ces
-artefacts (10.1002/mrm.28830 )
+artefacts ([article](https://onlinelibrary-wiley-com.sid2nomade-2.grenet.fr/doi/full/10.1002/mrm.28830))
 
 **MRTrix :** Commande "mrdegibbs" . La suppression de l'artefact est
 faite en utilisant la méthode de décalage local des sous-voxels proposée
 par Kellner et al.
 
-**Autres :** A COMPLETER
+**Autres :** **TODO**:A COMPLETER
 
 ### Correction de non linéarité des gradients
 
-A COMPLETER
+**TODO**: A COMPLETER
 
 ### Correction des mouvements et des distorsion dues aux inhomogénéités de champs
 
@@ -164,7 +162,7 @@ soit réalisée avec TOPUP, il faut avoir une séquence avec des b=0 avec
 encodage de phase inversé (soit seulement des b0 soit une séquence en
 blip totale).
 
-**SynB0DISCO** () : pour les protocoles qui n'ont pas des b=0 avec
+**SynB0DISCO** (<https://github.com/MASILab/Synb0-DISCO>) : pour les protocoles qui n'ont pas des b=0 avec
 encodage de phase inversé.
 
 Autres infos utiles :
@@ -181,8 +179,8 @@ Autres infos utiles :
 Correction de l'inhomogénéité du champ B1. Le but est d'améliorer
 l'estimation du masque du cerveau qui sera réalisée par la suite.
 
-Il est intéressant de faire cette correction dans les cas suivant : A
-COMPLETER
+Il est intéressant de faire cette correction dans les cas suivant : 
+**TODO** : A COMPLETER
 
 **MRTrix:** dwibiascorrect ants permet d'utiliser l'algorithme N4 de
 ANTs
@@ -198,8 +196,10 @@ Attention pas toujours juste surtout au niveau de la bouche si artefact
 **Freesurfer synthstrip:**
 <https://surfer.nmr.mgh.harvard.edu/docs/synthstrip/>
 
+**TODO** : A COMPLETER 
+
 ### Recalage dans l'espace MNI
 
-A COMPLETER
+**TODO** : A COMPLETER
 
-ANTs
+
