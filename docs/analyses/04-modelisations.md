@@ -3,8 +3,6 @@ layout: default
 title: Modélisations
 ---
 
-## Modélisations
-
 Les explications données dans cette parties sont partielles et la liste
 des outils disponibles n'est pas exhaustive.
 
@@ -91,7 +89,7 @@ FSL permet d'obtenir le DTI et d'obtenir les métriques avec la commande
 > Imaging at 3T: Reproducibility and Quality of Fit » ; Magn Reson Med
 > 2021
 
-- Autres :
+- Autres : <https://mriquestions.com/diffusion-kurtosis.html> 
 
 #### Explications (partielles):
 
@@ -178,20 +176,20 @@ kurtosis :
 **--kurtdir** Output maps of kurtosis along each eigenvector: K1, K2,
 and K3 (for multi-shell data)
 
-#### Dipy
+##### Dipy
 
 La librairie python Dipy permet de facilement estimer le DKI et
 d'obtenir les cartes. Plusieurs tutoriels sont disponibles :
 
-- 
-- 
+- DKI: <https://docs.dipy.org/stable/examples_built/reconstruction/reconst_dki.html#constrained-optimization-for-dki>
+- MSDKI: <https://docs.dipy.org/stable/examples_built/reconstruction/reconst_msdki.html#mean-signal-diffusion-kurtosis-imaging-msdki> 
 
-#### Diffusion Kurtosis Estimator (DKE)
+##### Diffusion Kurtosis Estimator (DKE)
 
 Logiciel pour estimer le DKI (dernière MAJ en 2015)
 
-- 
-- 
+– <https://www.nitrc.org/projects/dke>
+- <https://medicine.musc.edu/departments/centers/cbi/dki>
 
 ##### DKI matlab (CAIR)
 
