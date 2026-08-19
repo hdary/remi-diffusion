@@ -1,0 +1,1452 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Synthèse opérationnelle des bonnes pratiques en IRM de diffusion.">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../02-controle-qualite/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/site/logo_remi.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Préparation des données - BIDS pour la diffusion - IRM de diffusion</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#le-format-bids" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="IRM de diffusion" class="md-header__button md-logo" aria-label="IRM de diffusion" data-md-component="logo">
+      
+  <img src="../../assets/images/site/logo_remi.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IRM de diffusion
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Préparation des données - BIDS pour la diffusion
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="IRM de diffusion" class="md-nav__button md-logo" aria-label="IRM de diffusion" data-md-component="logo">
+      
+  <img src="../../assets/images/site/logo_remi.png" alt="logo">
+
+    </a>
+    IRM de diffusion
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acquisition
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Acquisition
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/01-description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Description
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/02-pour-une-bonne-analyse-dti/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyse DTI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/03-pour-une-bonne-tractographie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tractographie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/04-pour-du-dki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DKI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/05-pour-du-noddi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NODDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/06-acquisition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acquisition détaillée
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acquisition/07-traitement-de-donnees/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traitement de données
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traitement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Traitement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préparation BIDS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Préparation BIDS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#le-format-bids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le format BIDS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specificite-bids-pour-la-diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spécificité BIDS pour la diffusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spécificité BIDS pour la diffusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-informations-sur-les-gradients-bvecbval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les informations sur les gradients (bvec/bval)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-informations-recommandees-dans-le-fichier-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les informations recommandées dans le fichier .json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-cartes-de-champ" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les cartes de champ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specificite-philips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spécificité PHILIPS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spécificité PHILIPS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encodage-de-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encodage de phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slice-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slice timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totalreadouttime-et-effectiveechospacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TotalReadoutTime et EffectiveEchoSpacing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specificite-siemens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spécificité SIEMENS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specificite-ge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spécificité GE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specificite-canon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spécificité CANON
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-controle-qualite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contrôle qualité
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-pretraitements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prétraitements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-modelisations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modélisations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-tractographie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tractographie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-analyses-voxel-wise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyses voxel-wise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutoriel
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutoriel
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/notebooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notebooks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributeur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributeur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#le-format-bids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le format BIDS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specificite-bids-pour-la-diffusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spécificité BIDS pour la diffusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spécificité BIDS pour la diffusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-informations-sur-les-gradients-bvecbval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les informations sur les gradients (bvec/bval)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-informations-recommandees-dans-le-fichier-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les informations recommandées dans le fichier .json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-cartes-de-champ" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les cartes de champ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specificite-philips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spécificité PHILIPS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Spécificité PHILIPS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encodage-de-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encodage de phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slice-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slice timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totalreadouttime-et-effectiveechospacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TotalReadoutTime et EffectiveEchoSpacing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specificite-siemens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spécificité SIEMENS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specificite-ge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spécificité GE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specificite-canon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spécificité CANON
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Préparation BIDS</h1>
+
+<h2 id="le-format-bids">Le format BIDS</h2>
+<p>Le format BIDS (Brain Imaging Data Structure) est une norme pour l'organisation et la description des données de neuro-imagerie ainsi que des résultats d'études. L'utilisation de ce format standardisé facilite la réutilisation et le partage des données.</p>
+<p>Par ailleurs, plusieurs <a href="https://bids-apps.neuroimaging.io/apps/">logiciels</a> utilisent en entrée des jeux de données au format BIDS.</p>
+<p>Les <a href="https://bids-specification.readthedocs.io/en/stable/">spécifications BIDS</a> définissent la manière dont un jeu de données doit être organisé.</p>
+<h2 id="specificite-bids-pour-la-diffusion">Spécificité BIDS pour la diffusion</h2>
+<p>Les spécificités BIDS pour la diffusion sont détaillées dans la <a href="https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-imaging-data.html#diffusion-imaging-data">norme</a>. </p>
+<p>Les données de diffusion (diffusion-weigthed image (dwi) et single-band reference image (sbref)) doivent être stockées dans le dossier "dwi" du participant. </p>
+<h3 id="les-informations-sur-les-gradients-bvecbval">Les informations sur les gradients (bvec/bval)</h3>
+<p>Chaque fichier NIfTI (<em>dwi.nii.gz) doit être accompagné des fichiers </em>dwi.bval et *dwi.bvec contenant les infos sur les gradients. Les fichiers .bval indiquent la valeur du facteur de diffusion (b-value en s/mm²) appliquée à chaque volume, tandis que les fichiers .bvec indiquent la direction du gradient de diffusion (vecteur 3D) utilisée pour chaque volume.
+Ces fichiers doivent être au <a href="https://fsl.fmrib.ox.ac.uk/fsl/docs/diffusion/index.html#diffusion-data-in-fsl">format FSL</a>. </p>
+<h3 id="les-informations-recommandees-dans-le-fichier-json">Les informations recommandées dans le fichier .json</h3>
+<p>Dans le fichier .json qui accompagne le NIfTI il est recommandé d'ajouter des informations sur la direction de l'encodage de phase (<a href="https://bids-specification.readthedocs.io/en/stable/glossary.html#objects.metadata.PhaseEncodingDirection"><code>PhaseEncodingDirection</code></a>) ainsi que sur le temps total de lecture de l'espace de Fourier (<a href="https://bids-specification.readthedocs.io/en/stable/glossary.html#objects.metadata.TotalReadoutTime"><code>TotalReadoutTime</code></a>) pour faciliter la suite des traitements. </p>
+<p>Si la diffusion est acquise en plusieurs fois ("runs"), il est recommandé d'utiliser le label "run" dans le nom des fichiers et d'ajouter 
+Il est également recommandé d'ajouter <a href="https://bids-specification.readthedocs.io/en/stable/glossary.html#objects.metadata.MultipartID"><code>MultipartID</code></a> dans le fichiers json. </p>
+<h3 id="les-cartes-de-champ">Les cartes de champ</h3>
+<p>Les différentes cartes de champ possibles sont détaillées dans la <a href="https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-imaging-data.html#fieldmap-data">norme</a>. </p>
+<p>Si des cartes de champ sont acquises, il faut rajouter dans le fichier .json de la carte de champ le label <a href="https://bids-specification.readthedocs.io/en/stable/glossary.html#objects.metadata.IntendedFor">IntendedFor</a>. </p>
+<p>Il faut également rajouter le label <a href="https://bids-specification.readthedocs.io/en/stable/glossary.html#objects.metadata.B0FieldIdentifier"><code>B0FieldIdentifier</code></a> et dans le fichier .json de la diffusion <a href="https://bids-specification.readthedocs.io/en/stable/glossary.html#b0fieldsource-metadata">B0FieldSource</a>.</p>
+<h2 id="specificite-philips">Spécificité PHILIPS</h2>
+<h3 id="encodage-de-phase">Encodage de phase</h3>
+<p>Les fichiers DICOM de Philips indiquent l'axe de codage de phase (par exemple, antéro-postérieur [AP] ou gauche-droite [LR]), mais ne précisent pas la polarité (A→P contre P→A, ou R→L contre L→R). Le label <code>PhaseEncodingDirection</code> ne sera donc pas ajoutée automatiquement au fichier JSON BIDS via des logiciels comme dcm2niix. Il est donc nécessaire de l'ajouter manuellement si vous connaissez la direction du codage de phase (information disponible sur la console de l'IRM).</p>
+<p>Pour une image conforme à la convention <a href="https://www.slicer.org/wiki/Coordinate_systems">RAS (Right-Anterior-Superior) convention</a> :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Philips scanner</th>
+<th style="text-align: center;">BIDS json</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A&gt;&gt;P (anterior-posterior)</td>
+<td style="text-align: center;">APA</td>
+<td style="text-align: center;">j-</td>
+</tr>
+<tr>
+<td style="text-align: center;">P&gt;&gt;A (posterior-anterior)</td>
+<td style="text-align: center;">APP</td>
+<td style="text-align: center;">j</td>
+</tr>
+<tr>
+<td style="text-align: center;">R&gt;&gt;L (right-left)</td>
+<td style="text-align: center;">RLR</td>
+<td style="text-align: center;">i-</td>
+</tr>
+<tr>
+<td style="text-align: center;">L&gt;&gt;R (left-righ)</td>
+<td style="text-align: center;">RLL</td>
+<td style="text-align: center;">i</td>
+</tr>
+</tbody>
+</table>
+<h3 id="slice-timing">Slice timing</h3>
+<p>Dans les séquences EPI, chaque volume 3D est acquis sous forme de séquences de coupes 2D (c'est-à-dire que les différentes coupes d'un même volume ne sont pas acquises simultanément, mais successivement). Chaque fabricant (Siemens, Philips, etc.) dispose de modes d'ordre de coupe spécifiques.</p>
+<p>Pour les scanners Philips, les modes suivants sont possibles :</p>
+<ul>
+<li>Default = le temps d'acquisition entre coupes adjacentes est maximisé</li>
+<li>Ascending (FH, AP, LR) = acquisition dans un ordre linéaire du pied vers la tête, de l'antérieur vers le postérieur ou de la gauche vers la droite</li>
+<li>Descending (HF, PA, RL) = acquisition dans un ordre linéaire de la tête vers le pied, du postérieur vers l'antérieur ou de la droite vers la gauche</li>
+<li>Interleaved = l'intervalle de temps entre l'acquisition de coupes voisines est maximisé (le nombre d'entrelacements est estimé par la racine carrée du nombre de coupes, arrondie à l'entier supérieur)</li>
+</ul>
+<p>Afin d'effectuer la correction du temps d'acquisition des coupes (<em>slice timing correction</em>) lors des étapes de prétraitement, vous devrez connaître l'ordre des coupes. Pour Philips le label <a href="https://bids-specification.readthedocs.io/en/stable/glossary.html#slicetiming-metadata"><code>SliceTiming</code></a> n'est pas extrait automatiquement par les logiciels de conversion. Il faut le recalculer à partir des informations suivants: mode d'acquistion (pas dans le DICOM, à récupérer à la machine), temps de répétition, nombre de coupes, facteur multiband si miltiband, nombre de packet et pour les acquisition "sparse" temps de pause entre la dernière coupe du volume et le début du suivant, en secondes.</p>
+<p><strong>TODO</strong> : ajouter script permettant de le faire </p>
+<h3 id="totalreadouttime-et-effectiveechospacing">TotalReadoutTime et EffectiveEchoSpacing</h3>
+<p>Le paramètre <code>TotalReadoutTime</code>, tel que défini dans la spécification BIDS, correspond à la durée de lecture qui aurait généré des données présentant le niveau de distorsion observé (et non à la durée réelle de la séquence de lecture). Cette information ne figure pas directement dans les fichiers DICOM Philips. Si vous utilisez dcm2niix, les champs <code>EstimatedTotalReadoutTime</code> et <code>EstimatedEffectiveEchoSpacing</code> sont renseignés dans le fichier JSON.</p>
+<p>Pour la correction par <code>TOPUP</code> (via FSL), cette information n'est pas requise si la durée de lecture est identique pour l'image principale à corriger et pour les images servant à estimer le champ (vous pouvez par exemple utiliser la valeur 1). Toutefois, certaines applications BIDS, comme fMRIPrep, exigent cette information si des images de champ (fmap) sont utilisées.</p>
+<p><strong>TODO</strong>: ajouter info pour le calcul ? </p>
+<h2 id="specificite-siemens">Spécificité SIEMENS</h2>
+<p><strong>TODO</strong>: ajouter info </p>
+<h2 id="specificite-ge">Spécificité GE</h2>
+<p><strong>TODO</strong>: ajouter info </p>
+<h2 id="specificite-canon">Spécificité CANON</h2>
+<p><strong>TODO</strong>: ajouter info </p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
