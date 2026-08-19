@@ -13,11 +13,11 @@ Les [spécifications BIDS](https://bids-specification.readthedocs.io/en/stable/)
 
 Les spécificités BIDS pour la diffusion sont détaillées dans la [norme](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-imaging-data.html#diffusion-imaging-data). 
 
-Les données de diffusion (diffusion-weigthed image (dwi) et single-band reference image (sbref) doivent être stockées dans le dossier "dwi" du participant. 
+Les données de diffusion (diffusion-weigthed image (dwi) et single-band reference image (sbref)) doivent être stockées dans le dossier "dwi" du participant. 
 
 ### Les informations sur les gradients (bvec/bval)
 
-Chaque fichier NIfTI ([*_]dwi.nii.gz) doit être accompagné des fichiers [*_]dwi.bval et [*_]dwi.bvec contenant les infos sur les gradients. Les fichiers .bval indiquent la valeur du facteur de diffusion (b-value en s/mm²) appliquée à chaque volume, tandis que les fichiers .bvec indiquent la direction du gradient de diffusion (vecteur 3D) utilisée pour chaque volume.
+Chaque fichier NIfTI (*dwi.nii.gz) doit être accompagné des fichiers *dwi.bval et *dwi.bvec contenant les infos sur les gradients. Les fichiers .bval indiquent la valeur du facteur de diffusion (b-value en s/mm²) appliquée à chaque volume, tandis que les fichiers .bvec indiquent la direction du gradient de diffusion (vecteur 3D) utilisée pour chaque volume.
 Ces fichiers doivent être au [format FSL](https://fsl.fmrib.ox.ac.uk/fsl/docs/diffusion/index.html#diffusion-data-in-fsl). 
 
 ### Les informations recommandées dans le fichier .json
@@ -60,7 +60,7 @@ Pour les scanners Philips, les modes suivants sont possibles :
 
 Afin d'effectuer la correction du temps d'acquisition des coupes (*slice timing correction*) lors des étapes de prétraitement, vous devrez connaître l'ordre des coupes. Pour Philips le label [`SliceTiming`](https://bids-specification.readthedocs.io/en/stable/glossary.html#slicetiming-metadata) n'est pas extrait automatiquement par les logiciels de conversion. Il faut le recalculer à partir des informations suivants: mode d'acquistion (pas dans le DICOM, à récupérer à la machine), temps de répétition, nombre de coupes, facteur multiband si miltiband, nombre de packet et pour les acquisition "sparse" temps de pause entre la dernière coupe du volume et le début du suivant, en secondes.
 
-#TODO : ajouter script permettant de le faire 
+**TODO** : ajouter script permettant de le faire 
 
 ### TotalReadoutTime et EffectiveEchoSpacing
 
@@ -68,14 +68,14 @@ Le paramètre `TotalReadoutTime`, tel que défini dans la spécification BIDS, c
 
 Pour la correction par `TOPUP` (via FSL), cette information n'est pas requise si la durée de lecture est identique pour l'image principale à corriger et pour les images servant à estimer le champ (vous pouvez par exemple utiliser la valeur 1). Toutefois, certaines applications BIDS, comme fMRIPrep, exigent cette information si des images de champ (fmap) sont utilisées.
 
-#TODO: ajouter info pour le calcul ? 
+**TODO**: ajouter info pour le calcul ? 
 
 
 ## Spécificité SIEMENS
-#TODO: ajouter info 
+**TODO**: ajouter info 
 
 ## Spécificité GE
-#TODO: ajouter info 
+**TODO**: ajouter info 
 
 ## Spécificité CANON 
-#TODO: ajouter info 
+**TODO**: ajouter info 
