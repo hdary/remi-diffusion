@@ -39,3 +39,5 @@ il est disponible à l'adresse suivante : [remi-diffusion](https://hdary.github.
 
 1. [Tutoriel utilisateur](./docs/tutorial/index.md)
 
+### Guide contributeur
+2. [Guide de contribution](./contributeur.md)
