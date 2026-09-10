@@ -33,7 +33,7 @@ pratique.
 ### Analyses
 
 1. [Préparation des données - BIDS pour la diffusion](./analyses/01-preparation-bids.md) : Manue, Julien
-2. [Contrôle qualité données brutes](./analyses/02-controle-qualite.md)
+2. [Contrôle qualité données brutes et catalogue artefact](./analyses/02-controle-qualite.md)
 3. [Prétraitements](./analyses/03-pretraitements.md) : Julien, Manue, Bastien, Hugo
 4. [Modélisations](./analyses/04-modelisations.md) : Elena, Hugo
 5. [Tractographie](./analyses/05-tractographie.md)
