@@ -17,8 +17,8 @@ pratique.
 ### Acquisition
 
 1. [Description](./acquisition/01-description.md)
-2. Contraintes liées à l'organe (Cerveau, Moelle, coeur)
-3. Influence de la population sur les paramètres
+2. Contraintes liées à l'organe (Cerveau, Moelle, cœur, rein) : Magalie
+3. Contraintes liées à la population
 4. Paramètres génraux de séquence : Mélanie
 5. paramètres sépcifiques à la diffusion (b-value, ...) : Mélanie
 6. [Pour une bonne analyse DTI](./acquisition/02-pour-une-bonne-analyse-dti.md)
@@ -32,7 +32,7 @@ pratique.
 
 ### Analyses
 
-1. [Préparation des données - BIDS pour la diffusion](./analyses/01-preparation-bids.md)
+1. [Préparation des données - BIDS pour la diffusion](./analyses/01-preparation-bids.md) : Manue, Julien
 2. [Contrôle qualité données brutes](./analyses/02-controle-qualite.md)
 3. [Prétraitements](./analyses/03-pretraitements.md)
 4. [Modélisations](./analyses/04-modelisations.md) : Elena
