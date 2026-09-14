@@ -28,7 +28,7 @@ Cette section regroupe les recommandations liées au design d'acquisition en IRM
 
 ### Pages de la section
 
-1. [L'IRM de diffusion](./acquisition/01-diffusion/)
+1. [L'IRM de diffusion](./01-diffusion/)
 2. [Contraintes liées à l'organe](./acquisition/02-organes.md)
 3. [Contraintes liées à la population](./acquisition/03-population.md)
 4. [Paramètres généraux](./acquisition/04-parametres-generaux.md)
