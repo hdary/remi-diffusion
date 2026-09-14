@@ -16,26 +16,23 @@ pratique.
 
 ### Acquisition
 
-1. [Description](./acquisition/01-description.md)
-2. Contraintes liées à l'organe (Cerveau, Moelle, cœur, rein) : Magalie
-3. Contraintes liées à la population
-4. Paramètres génraux de séquence : Mélanie
-5. paramètres sépcifiques à la diffusion (b-value, ...) : Mélanie
-6. [Pour une bonne analyse DTI](./acquisition/02-pour-une-bonne-analyse-dti.md)
-7. [Pour une bonne tractographie](./acquisition/03-pour-une-bonne-tractographie.md)
-8. [Pour du DKI (Diffusion Kurtosis Imaging)](./acquisition/04-pour-du-dki.md)
-9. [Pour du NODDI](./acquisition/05-pour-du-noddi.md)
-10. [Acquisition](./acquisition/06-acquisition.md)
-11. a la console (bonnes pratiques et FAQ) : manip icm, Julien S. Marie
-12. A l'export des données
+1. [L'IRM de diffusion](./acquistion/01-diffusion/)
+2. [Contraintes liées à l'organe](./acquisition/02-organes.md) (Magalie)
+3. [Contraintes liées à la population](./acquisition/03-population.md) (Marie, Emmanuelle)
+4. [Paramètres généraux](./acquisition/04-parametres-generaux.md) (Mélanie, Elena, Julien S)
+5. [Paramètres spécifiques](./acquisition/05-parametres-spécifiques.md) (Mélanie, Julien S)
+6. [Conseils par type d'analyses](./acquisition/06-conseils-par-analyses.md) (Mélanie, Julien S, Emmanuelle)
+7. [Multicentrique](./acquisition/07-multicentrique.md) (Marie ?)
+8. [À la console](./acquisition/08-console.md) (Marie, Brunhilde,  Julie)
+9. [Export des données](./acquisition/09-export.md) (Marie, Emmanuelle
 
 
 ### Analyses
 
-1. [Préparation des données - BIDS pour la diffusion](./analyses/01-preparation-bids.md) : Manue, Julien
+1. [Préparation des données - BIDS pour la diffusion](./analyses/01-preparation-bids.md) (Manue, Julien)
 2. [Contrôle qualité données brutes et catalogue artefact](./analyses/02-controle-qualite.md)
-3. [Prétraitements](./analyses/03-pretraitements.md) : Julien, Manue, Bastien, Hugo
-4. [Modélisations](./analyses/04-modelisations.md) : Elena, Hugo
+3. [Prétraitements](./analyses/03-pretraitements.md) (Julien, Manue, Elena, Bastien, Hugo)
+4. [Modélisations](./analyses/04-modelisations.md) (Elena, Hugo)
 5. [Tractographie](./analyses/05-tractographie.md)
 7. Connectivité
 8. [Analyses voxel-wise (TBSS, fixel-based analysis)](./analyses/06-analyses-voxel-wise.md)
