@@ -9,9 +9,9 @@ actions:
   - label: 3. Contraintes liées à la population
     url: /acquisition/03-population.md
   - label: 4. Paramètres généraux
-    url: /acquisition/04-parametre-generaux.md
+    url: /acquisition/04-parametres-generaux.md
   - label: 5. Paramètres sécifiques
-    url: /acquisition/05-parametre-spécifiques.md
+    url: /acquisition/05-parametres-spécifiques.md
   - label: 6. Conseil par analyse
     url: /acquisition/06-conseils-par-analyses.md
   - label: 7. Multicentrique
@@ -29,11 +29,11 @@ Cette section regroupe les recommandations liées au design d'acquisition en IRM
 ### Pages de la section
 
 1. [L'IRM de diffusion](./acquisition/01-diffusion/)
-2. [Contraintes liées à l'organe](/docs/acquisition/02-organes.md)
-3. [Contraintes liées à la population](/docs/acquisition/03-population.md)
-4. [Paramètres généraux](/docs/acquisition/04-parametre-generaux.md)
-5. [Paramètres spécifiques](/docs/acquisition/05-parametre-spécifiques.md)
-6. [Conseils par type d'analyses](/docs/acquisition/06-conseils-par-analyses.md)
-7. [Multicentrique](/docs/acquisition/07-multicentrique.md)
-8. [À la console](/docs/acquisition/08-console.md)
-9. [Export des données](/docs/acquisition/09-export.md)
+2. [Contraintes liées à l'organe](./acquisition/02-organes.md)
+3. [Contraintes liées à la population](./acquisition/03-population.md)
+4. [Paramètres généraux](./acquisition/04-parametres-generaux.md)
+5. [Paramètres spécifiques](./acquisition/05-parametres-spécifiques.md)
+6. [Conseils par type d'analyses](./acquisition/06-conseils-par-analyses.md)
+7. [Multicentrique](./acquisition/07-multicentrique.md)
+8. [À la console](./acquisition/08-console.md)
+9. [Export des données](./acquisition/09-export.md)
