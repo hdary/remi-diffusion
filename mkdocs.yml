@@ -25,13 +25,15 @@ nav:
   - Accueil: index.md
   - Acquisition:
     - Introduction: acquisition/index.md
-    - Description: acquisition/01-description.md
-    - Analyse DTI: acquisition/02-pour-une-bonne-analyse-dti.md
-    - Tractographie: acquisition/03-pour-une-bonne-tractographie.md
-    - DKI: acquisition/04-pour-du-dki.md
-    - NODDI: acquisition/05-pour-du-noddi.md
-    - Acquisition détaillée: acquisition/06-acquisition.md
-    - Traitement de données: acquisition/07-traitement-de-donnees.md
+    - L'IRM de Diffusion: acquisition/01-diffusion
+    - Contraintes liées à l'organe: acquisition/02-organes.md
+    - Contraintes liées à la population: acquisition/03-population.md
+    - Paramètres généraux: acquisition/04-parametre-generaux.md
+    - Paramètres spécifiques: acquisition/05-parametre-spécifiques.md
+    - Conseils par type d'analyses: acquisition/06-conseils-par-analyses.md
+    - Multicentrique: acquisition/07-multicentrique.md
+    - À la console: acquisition/08-console.md
+    - Export des données: acquisition/09-export.md
   - Traitement:
     - Introduction: analyses/index.md
     - Préparation BIDS: analyses/01-preparation-bids.md
