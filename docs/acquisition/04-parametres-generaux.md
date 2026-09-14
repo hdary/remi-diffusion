@@ -8,9 +8,10 @@ title: Paramètres généraux
 
 Cette partie présentera les principaux paramètres permettant de définir une acquisition de diffusion. 
 
-
+Description des différentes séquences et nom constructeurs ?
 
 Dans l'ancien document : 
+
 Les choix cruciaux se portent vers:
 
 - La résolution spatiale: limite haute (à 3T): 1.25mm- 1.5mm iso (HCP - HCP lifespan) - "classiquement" : 2mm iso (UK Biobank)
